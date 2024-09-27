@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefast</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minha Lista de Tarefas</h1>
+    <input type="text" id="taskInput" placeholder="Adicione uma nova tarefa...">
+    <button onclick="addTask()">Adicionar</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById('taskInput');
+            const taskValue = taskInput.value;
+
+            if (taskValue) {
+                const taskList = document.getElementById('taskList');
+                const li = document.createElement('li');
+
+                // Adicionando a tarefa ao elemento li
+                li.textContent = taskValue;
+
+                // Criando o botão para remover a tarefa
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remover';
+                removeButton.onclick = function () {
+                    taskList.removeChild(li); // Remove a tarefa da lista
+                };
+
+                li.appendChild(removeButton); // Adiciona o botão ao li
+                taskList.appendChild(li); // Adiciona a nova tarefa à lista
+                taskInput.value = ''; // Limpa o campo de entrada
+            }
+        }
+    </script>
+</body>
+</html>

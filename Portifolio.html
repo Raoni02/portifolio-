@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu li {
+            margin: 0 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #555;
+        }
+
+        h1, h2 {
+            margin: 10px 0;
+        }
+
+        .projects, .contact, .about, .social-media, .gallery {
+            padding: 20px;
+            margin: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .project-images img {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        .social-media {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .social-media a:hover {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#about">Sobre Mim</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+        <h1>Bem-vindo ao Meu Portfólio</h1>
+        <p>Sou um desenvolvedor iniciante em Java, HTML e CSS.</p>
+    </header>
+    
+    <section class="about" id="about">
+        <h2>Sobre Mim</h2>
+        <p>Sou um desenvolvedor iniciante apaixonado por programação e tecnologia. Tenho conhecimento em Java, HTML e CSS, e estou sempre buscando aprender novas habilidades e melhorar meus projetos. Meu objetivo é criar soluções que ajudem as pessoas e tragam valor.</p>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2>Projetos</h2>
+        <ul>
+            <li>
+                <strong>To-Do List</strong>: Um aplicativo de lista de tarefas onde os usuários podem adicionar, remover e marcar tarefas como concluídas.
+                <br>
+                <a href="todo_list.html" target="_blank">Ver Projeto</a>
+            </li>
+
+            <li>
+                <strong>Jogo da Velha</strong>: Um jogo simples da velha que permite que dois jogadores joguem um contra o outro. É uma ótima maneira de praticar lógica e estratégias!
+                <br>
+                <a href="jogo_da_velha.html" target="_blank">Ver Projeto</a>
+            </li>
+
+            <li>
+                <strong>Cadastro de Usuários</strong>: O sistema apresenta um formulário onde os usuários podem inserir suas informações
+                <br>
+                <a href="Cadastro_de_Usuários.html" target="_blank">Ver Projeto</a>
+            </li>
+
+        </ul>
+    </section>
+
+   
+    <section class="contact" id="contact">
+        <h2>Entre em Contato</h2>
+        <form id="contactForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="responseMessage" style="margin-top: 15px;"></div>
+    </section>
+
+    <section class="social-media">
+        <h2>Conecte-se Comigo</h2>
+        <a href="https://linkedin.com/in/raoni-pereira-dos-santos-49969022a" target="_blank">LinkedIn</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Meu Portfólio</p>
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            // Captura os dados do formulário
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            // Simula um envio
+            document.getElementById("responseMessage").innerHTML = `<h2>Obrigado pela sua mensagem, ${name}!</h2><p>Eu retornarei em breve.</p>`;
+            this.reset(); // Limpa o formulário
+        });
+    </script>
+</body>
+</html>
